@@ -1,0 +1,82 @@
+---
+title: "Basic R"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+### R as a calculator
+```{r}
+22 + 35
+
+25-24
+
+32*2
+
+21/3
+
+89%%3
+
+8%/%3
+```
+
+## Basic data types
+### Objects
+- Vectors
+```{r}
+# atomic vectors
+num = 2
+
+string = 'Hello!, i am a string'
+
+l = TRUE
+
+comp = 3+2i
+
+date = as.Date('1995-02-02')
+
+```
+
+
+### Identifying the data types
+```{r}
+class(num)
+
+class(string)
+
+class(l)
+
+class(comp)
+
+class(date)
+```
+
+## Converting data types
+```{r}
+num = '24'
+as.numeric(num)
+```
+
+
+## Objects in R environment
+```{r}
+# listing all the objects in R environment
+ls()
+
+# Removing objects from R environment
+rm(num)
+rm(comp, date)
+
+# Cleaning R environment
+rm(list = ls())
+```
+
+
+
+
+
+
+

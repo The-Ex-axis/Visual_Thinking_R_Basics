@@ -1,0 +1,62 @@
+---
+title: "Data Frames"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Data Frame
+
+- Data frame is a collection of vectors of different data types.
+
+
+## Creating a data frame
+
+```{r}
+
+vec1 = c(1,2,3,4,5)
+vec2 = c("Sushmitha","Ashok","Suraj","Priyanka","Bharat")
+vec3 = c(22,23,25,24,26)
+
+#combinding different vectors to form a data frame
+student_df = data.frame(ID = vec1,Name = vec2,Age = vec3,stringsAsFactors = F)
+
+#viewing a data frame 
+View(student_df)
+
+#finding the class
+class(student_df)
+
+#structure of a data frame
+str(student_df)
+
+#dimentions of a data frame
+dim(student_df)
+
+#column names & row names of a data frame
+names(student_df)
+colnames(student_df)
+
+rownames(student_df)
+
+
+##indexing or accesing elements in data frame
+
+#all rows and all columns
+student_df[,]
+
+#all rows of a particular column
+student_df[,2]
+
+#all columns of a particular row
+student_df[2,]
+
+#a particular row and a particular column of a data frame
+student_df[1,2]
+
+
+```
+

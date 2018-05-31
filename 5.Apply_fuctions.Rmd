@@ -1,0 +1,53 @@
+---
+title: "Apply functions"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(ggplot2)
+data(diamonds)
+```
+
+# Apply
+
+## apply with base functions
+```{r}
+#for columns
+apply(diamonds[,-c(2,3,4)], 2, sum)
+apply(diamonds[,-c(2,3,4)], 2, mean)
+
+#for rows
+apply(diamonds[,-c(2,3,4)], 1, sum)
+apply(diamonds[,-c(2,3,4)], 1, mean)
+```
+
+## apply with user defined functions
+```{r}
+# creating NULL values
+diamonds[2,5] = NA
+diamonds[3,2] = NA
+diamonds[2,7] = NA
+diamonds[3,5] = NA
+
+# defining a function
+count_na = function(vec){
+  return(sum(is.na(vec)))
+}
+apply(diamonds,2,count_na)
+
+# defining function inside an apply function
+apply(diamonds,2,function(x) sum(is.na(x)))
+```
+
+
+```{r}
+
+```
+
+
+
+
+
+

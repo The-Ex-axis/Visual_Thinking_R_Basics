@@ -1,0 +1,211 @@
+---
+title: "Data_structures"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Data Structures
+### Vectors
+- Collection of homogeneous data
+- Coerces(converts) all the members of the vector to higher order data types
+- Order of precision(character > complex > numeric > logical)
+```{r}
+vec = c(2,1,4,5,24,7,18)
+vec
+char_vec = c('h','e','l','l','o')
+char_vec
+
+## mixed input's to a vector
+mix_vec = c(2, 'Hey', TRUE)
+mix_vec
+```
+
+
+
+## Generating a sequence
+```{r}
+my_seq = 1:22
+
+gap_seq = seq(1, 45, 2)
+```
+
+
+### Playing with vectors
+```{r}
+vec = 6
+# numerical operations on a numerical vetor
+vec*3
+vec/12
+
+vec = c(4,2,31,12,46)
+
+# numerical operations on a numerical vetor
+vec*3
+vec/12
+
+# Mathematical operations between vectors
+vec1 = c(2,1,4,5)
+vec2 = c(8,4,1,9)
+vec1 + vec2
+vec1 - vec2
+vec1*vec2
+vec1/vec2
+vec1%%vec2
+vec1%/%vec2
+
+# functions on a vector
+length(vec)
+nchar(mix_vec)
+sort(vec)
+
+
+# Indexing a vector
+vec[2]
+
+# subsetting vectors
+vec[3:5]
+
+
+# logical operations inside a vector
+vec == 18
+vec[vec == 18]
+vec[!vec == 18]
+vec[vec > 7]
+vec[vec %in% c(2,1,4)]
+```
+
+
+## Lists
+- Can hold any data type or data structure
+- Ulike vectorslists don't perform coercion to diiferent data types
+```{r}
+# creating a list
+l = list('car',122200,c(1,23,12,87),c(21,3,22))
+l
+
+# namming a list
+names(l) = c('item','cost','specs','random')
+l
+names(l)[3] = 'specifications' 
+l
+names(l)
+
+# accessing list by name
+l[['cost']]
+l$cost
+l$specifications[3]
+
+# Accessing elements of a list
+l[1]    #returns a list of that element
+l[[1]]   ## returns element at that position
+l[1:3]
+l[c(1,4,2)]
+
+# print structure of a list
+str(l)
+
+# list can contain any complex data type in R
+my_list = list(matrix(c(1:6),nrow = 2,byrow = TRUE),c(2,1,8),list(2,'aa'))
+my_list
+```
+
+
+## Arrays
+- Multi-dimentional collection of data
+- Can't hold di
+```{r}
+#arrays
+# creating an array
+# 1D array(by default)
+my_array = array(1:12)
+class(my_array)
+my_array
+
+my_array2 = array(1:12, dim = c(4,3))
+my_array2
+
+arr = array(c(1,2,3,"a","b","c"),dim = c(2,3))
+arr
+
+three_d_array <- array(1:24,dim = c(4, 3, 2))
+three_d_array
+
+# accessing elements of an array
+my_array2[2,3]
+three_d_array[3,1,2]
+
+# subsetting an array
+three_d_array[2:4,1:2,2]
+three_d_array[,,1]
+three_d_array[c(4,2),c(1,2),2]
+
+
+# Manipulating an array
+my_array2[2,3] = 44
+my_array
+
+# properties of an array
+dim(three_d_array)
+nrow(my_array2)
+ncol(my_array2)
+nrow(three_d_array)
+ncol(three_d_array)
+```
+
+
+## Matrices
+- 2-dimentional array
+- Only holds homogeneous data
+```{r}
+# creating a matrix
+mat = matrix(c(1:24), nrow = 6, byrow = T)
+mat
+
+# acessing elements of a matrix
+mat[1,2]
+mat[4,3]
+
+# indexing a matrix
+mat[2:6,1:4]
+mat[,3:4]
+
+# naming rows and columns of a matrix
+dimnames(mat) = list(c('a','b','c','d','e','f'),c('x','y','z','p'))
+mat
+
+# acessing elements of a matrix by row and column names
+mat[c('b','e'),c('x','p')]
+
+# properties of a matrix
+dim(mat)
+nrow(mat)
+ncol(mat)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

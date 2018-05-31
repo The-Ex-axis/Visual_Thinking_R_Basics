@@ -1,0 +1,128 @@
+---
+title: "I/O operations"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Accessing inbuilt data
+
+```{r message=FALSE, warning=FALSE}
+#knowing all the inbuilt data bases
+ data()
+```
+
+```{r message=FALSE, warning=FALSE}
+#load an inbuilt data into an object
+df = airquality
+```
+
+```{r message=FALSE, warning=FALSE}
+#using R help documentation 
+ ?airquality
+```
+
+
+# Setting working directory
+
+```{r message=FALSE, warning=FALSE}
+#getting the present working directory
+getwd()
+
+```
+
+```{r message=FALSE, warning=FALSE}
+#setting the working directory
+setwd("E:/Extra/Meet Up")
+
+
+getwd()
+```
+
+
+# Reading from a csv file
+
+```{r message=FALSE, warning=FALSE}
+
+wine = read.csv("E:/Extra/Wine ratings/winemag-data_first150k.csv")
+
+```
+
+
+# Writing into a csv file
+
+```{r message=FALSE, warning=FALSE}
+
+write.csv(CO2,"E:/Extra/Meet Up/co2.csv")
+
+```
+
+
+# Reading from an excel files
+
+```{r message=FALSE, warning=FALSE}
+
+#installing a library 
+# install.packages("readxl")
+
+
+#loading a library
+library(readxl)
+
+
+#reading the first sheet of the excel sheet
+super_store1  = read_xlsx("E:/Extra/Meet Up/Sample-Superstore-Subset-Excel.xlsx",sheet = 1)
+
+
+#reading the second sheet of the excel sheet
+super_store2 = read_xlsx("E:/Extra/Meet Up/Sample-Superstore-Subset-Excel.xlsx",sheet = 2)
+
+
+#reading the third sheet of the excel sheet
+super_store3 = read_xlsx("E:/Extra/Meet Up/Sample-Superstore-Subset-Excel.xlsx",sheet = 3)
+```
+
+
+# Writing into an excel file
+
+```{r message=FALSE, warning=FALSE}
+#install xlsx library
+# install.packages("xlsx")
+
+#loading library xlsx
+library(xlsx)
+
+#writing to the first sheet of the excel file newly created
+write.xlsx(airquality,"E:/Extra/Meet Up/air.xlsx",sheetName = "1")
+```
+
+
+
+# Reading numerical values from the console
+
+```{r message=FALSE, warning=FALSE}
+
+input_number = scan()
+
+#printing an object just by typing the object name
+input_number
+
+#printing an object using print statement
+print(input_number)
+```
+
+
+
+
+# Reading charecter values from the console
+
+```{r message=FALSE, warning=FALSE}
+
+input_char = scan(what = "charecter")
+
+input_char
+```
+
+
